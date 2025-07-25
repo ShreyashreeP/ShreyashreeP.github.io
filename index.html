@@ -852,6 +852,45 @@
                 align-items: center;
             }
         }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+            border-radius: 50%;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-image:hover::before {
+            opacity: 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -900,7 +939,10 @@
             <div class="about-content">
                 <div class="about-visual">
                     <div class="profile-card">
-                        <div class="profile-avatar">SP</div>
+                        <!-- <div class="profile-avatar">SP</div> -->
+                        <div class="profile-image">
+                            <img src="assets/shreyashree.jpg" alt="Shreyashree Padhi" />
+                        </div>
                         <h4 style="color: white; margin-bottom: 1rem;">Marketing Professional</h4>
                         <p style="color: rgba(255,255,255,0.8);">Bangalore, India</p>
                     </div>
